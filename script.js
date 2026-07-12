@@ -262,21 +262,58 @@ document.addEventListener('DOMContentLoaded', () => {
     window.addEventListener('resize', resize);
     resize();
 
+    const logoEl = document.querySelector('.about-logo-anim');
+
     class Particle {
       constructor() {
-        this.x = Math.random() * canvas.width;
-        this.y = Math.random() * canvas.height;
-        this.size = Math.random() * 5 + 1; // 1 to 6px
-        this.speedX = Math.random() * 1 - 0.5;
-        this.speedY = Math.random() * 1 - 0.5;
+        this.reset();
+        // Fast forward the particle's life so the screen is already filled
+        const randomLife = Math.floor(Math.random() * 800);
+        this.x += this.speedX * randomLife;
+        this.y += this.speedY * randomLife;
+        this.life = randomLife;
+        this.size = Math.max(0.1, this.maxSize * (1 - this.life / 800));
+      }
+      
+      reset() {
+        if (logoEl) {
+          const rect = logoEl.getBoundingClientRect();
+          // Top right corner approximation area (not a single pixel point)
+          const baseOriginX = rect.left + rect.width * 0.85;
+          const baseOriginY = rect.top + rect.height * 0.15;
+          
+          // Add a random spread radius of ~50px so they spawn from a chunky region
+          this.x = baseOriginX + (Math.random() * 80 - 40);
+          this.y = baseOriginY + (Math.random() * 80 - 40);
+        } else {
+          this.x = canvas.width / 2;
+          this.y = canvas.height / 2;
+        }
+        
+        // Start larger (4px to 10px)
+        this.maxSize = Math.random() * 6 + 4; 
+        this.size = this.maxSize;
+        
+        // Radiate outwards faster to cover the page
+        const angle = Math.random() * Math.PI * 2;
+        const speed = Math.random() * 2 + 0.5;
+        this.speedX = Math.cos(angle) * speed;
+        this.speedY = Math.sin(angle) * speed;
+        
         this.color = colors[Math.floor(Math.random() * colors.length)];
         this.angle = Math.random() * 360;
         this.spin = Math.random() * 2 - 1;
+        this.life = 0;
       }
+
       update() {
         this.x += this.speedX;
         this.y += this.speedY;
         this.angle += this.spin;
+        this.life++;
+
+        // Shrink as they go far away
+        this.size = Math.max(0, this.maxSize * (1 - this.life / 800));
 
         // Mouse repulsion
         if (window.innerWidth > 992) {
@@ -289,11 +326,10 @@ document.addEventListener('DOMContentLoaded', () => {
           }
         }
 
-        // Wrap around edges
-        if (this.x > canvas.width) this.x = 0;
-        if (this.x < 0) this.x = canvas.width;
-        if (this.y > canvas.height) this.y = 0;
-        if (this.y < 0) this.y = canvas.height;
+        // Reset if it goes far off screen or lives too long
+        if (this.x > canvas.width + 200 || this.x < -200 || this.y > canvas.height + 200 || this.y < -200 || this.life > 800 || this.size <= 0) {
+          this.reset();
+        }
       }
       draw() {
         ctx.save();
@@ -313,7 +349,7 @@ document.addEventListener('DOMContentLoaded', () => {
 
     function initParticles() {
       particles = [];
-      const numParticles = Math.min(window.innerWidth / 20, 60); // Responsive amount
+      const numParticles = Math.min(window.innerWidth / 15, 100); // Increased amount
       for (let i = 0; i < numParticles; i++) {
         particles.push(new Particle());
       }

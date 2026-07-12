@@ -340,9 +340,6 @@ body {
   position: relative;
   width: 100%;
   aspect-ratio: 1;
-  background-color: var(--bg-card);
-  border-radius: 30px;
-  border: 1px solid var(--border-light);
   display: flex;
   align-items: center;
   justify-content: center;
@@ -549,7 +546,21 @@ body {
   background-color: var(--bg-card);
   transition: transform 0.5s ease;
 }
-.web-tall .portfolio-placeholder { height: 450px; }
+.portfolio-image {
+  border-radius: 15px;
+  overflow: hidden;
+  line-height: 0;
+  position: relative;
+}
+.portfolio-image img {
+  width: 100%;
+  height: auto;
+  display: block;
+  transition: transform 0.5s ease;
+}
+.masonry-item:hover .portfolio-image img {
+  transform: scale(1.05);
+}
 
 .portfolio-placeholder.blue { background: linear-gradient(135deg, #0A0B0E, #00aee944); }
 .portfolio-placeholder.purple { background: linear-gradient(135deg, #0A0B0E, #92278f44); }
@@ -863,10 +874,20 @@ body {
   border: 1px solid var(--border-light);
   display: flex; align-items: center; justify-content: center;
   color: var(--text-light); text-decoration: none;
-  font-size: 0.9rem; font-weight: 600;
   transition: all 0.3s;
 }
-.social-btn:hover { background: var(--text-light); color: var(--bg-dark); }
+.social-btn.social-wa { color: #25D366; }
+.social-btn.social-fb { color: #1877F2; }
+.social-btn.social-ig { color: #E1306C; }
+.social-btn.social-in { color: #0A66C2; }
+
+.social-btn:hover { background: var(--bg-card-hover); border-color: rgba(255,255,255,0.2); }
+.social-btn.social-wa:hover { color: #fff; background: #25D366; border-color: #25D366; box-shadow: 0 5px 15px rgba(37, 211, 102, 0.4); }
+.social-btn.social-fb:hover { color: #fff; background: #1877F2; border-color: #1877F2; box-shadow: 0 5px 15px rgba(24, 119, 242, 0.4); }
+.social-btn.social-ig:hover { color: #fff; background: linear-gradient(45deg, #f09433, #dc2743, #bc1888); border-color: transparent; box-shadow: 0 5px 15px rgba(220, 39, 67, 0.4); }
+.social-btn.social-in:hover { color: #fff; background: #0A66C2; border-color: #0A66C2; box-shadow: 0 5px 15px rgba(10, 102, 194, 0.4); }
+
+.social-btn svg { display: block; margin-top: 2px; }
 .footer-bottom {
   border-top: 1px solid var(--border-light);
   padding-top: 2rem;
