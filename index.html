@@ -1,0 +1,489 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="description" content="Prysal Printhub is a premium creative agency in Sri Lanka specializing in high-end brand identity, web design, and digital marketing.">
+  <meta name="keywords" content="Creative Agency, Logo Design, Web Design, Sri Lanka, Digital Marketing, UI/UX, Prysal Printhub">
+  <meta property="og:title" content="Prysal Printhub | World-Class Creative Agency">
+  <meta property="og:description" content="Elevating brands with premium design and digital strategy.">
+  <meta property="og:type" content="website">
+  <meta name="twitter:card" content="summary_large_image">
+  <title>Prysal Printhub | Premium Creative Agency</title>
+  
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;900&display=swap" rel="stylesheet">
+  
+  <link rel="stylesheet" href="style.css">
+
+  <!-- JSON-LD Structured Data -->
+  <script type="application/ld+json">
+  {
+    "@context": "https://schema.org",
+    "@type": "ProfessionalService",
+    "name": "Prysal Printhub",
+    "image": "logo.png",
+    "description": "Premium creative agency in Sri Lanka.",
+    "address": {
+      "@type": "PostalAddress",
+      "addressCountry": "LK"
+    },
+    "telephone": "+94775103274",
+    "email": "Prysalprinthub@gmail.com"
+  }
+  </script>
+</head>
+<body>
+
+  <!-- Custom Cursor -->
+  <div class="custom-cursor"></div>
+  <div class="custom-cursor-follower"></div>
+
+  <!-- Interactive Background Canvas -->
+  <canvas id="particle-canvas"></canvas>
+
+  <nav class="navbar">
+    <div class="nav-container">
+      <div class="logo magnetic">
+        <img src="logo.png" alt="Prysal Printhub Logo" class="nav-logo-img">
+        <span>PRYSAL PRINTHUB</span>
+      </div>
+      
+      <ul class="nav-links">
+        <li><a href="#about" class="magnetic"><span class="btn-text">About</span></a></li>
+        <li><a href="#services" class="magnetic"><span class="btn-text">Services</span></a></li>
+        <li><a href="#portfolio" class="magnetic"><span class="btn-text">Portfolio</span></a></li>
+        <li><a href="#testimonials" class="magnetic"><span class="btn-text">Testimonials</span></a></li>
+        <li><a href="#contact" class="magnetic"><span class="btn-text">Contact</span></a></li>
+      </ul>
+
+      <a href="#contact" class="nav-cta btn-secondary magnetic">
+        <span class="btn-text">Get a Quote</span>
+      </a>
+    </div>
+  </nav>
+
+  <main class="container">
+    
+    <!-- 1. Hero Section -->
+    <header class="hero" id="home">
+      <div class="hero-content">
+        <h1 class="animate-on-scroll">
+          We design your <br/> 
+          <span class="text-gradient type-writer" id="typewriter"></span><span class="cursor">|</span>
+        </h1>
+        <p class="animate-on-scroll delay-1 hero-subtitle">From stunning global brand identities to high-converting digital marketing, we are Sri Lanka's premium creative powerhouse.</p>
+        
+        <div class="hero-buttons animate-on-scroll delay-2">
+          <a href="#portfolio" class="btn-primary magnetic"><span class="btn-text">View Portfolio</span></a>
+          <a href="#contact" class="btn-secondary magnetic"><span class="btn-text">Get a Free Quote</span></a>
+        </div>
+      </div>
+      
+      <div class="scroll-indicator animate-on-scroll delay-3">
+        <div class="mouse"></div>
+        <p>Scroll to Explore</p>
+      </div>
+    </header>
+
+    <!-- 2. About Section -->
+    <section class="about-section" id="about">
+      <div class="about-grid">
+        <div class="about-text animate-on-scroll">
+          <h3 class="section-title text-left">Who We Are</h3>
+          <h2>We engineer <span class="text-gradient">visual experiences.</span></h2>
+          
+          <div class="about-tabs">
+            <div class="tab-btn active magnetic" data-tab="story"><span class="btn-text">Our Story</span></div>
+            <div class="tab-btn magnetic" data-tab="mission"><span class="btn-text">Mission</span></div>
+            <div class="tab-btn magnetic" data-tab="vision"><span class="btn-text">Vision</span></div>
+          </div>
+          
+          <div class="tab-content active" id="tab-story">
+            <p>Based in Sri Lanka, Prysal Printhub started with a simple belief: design should do more than look good; it should drive results. We bridge the gap between stunning aesthetics and high-converting strategy.</p>
+            <p style="margin-top:1rem;">Whether you need a timeless brand identity, a gorgeous digital platform, or a growth-focused marketing campaign, our passionate team delivers excellence at every touchpoint.</p>
+          </div>
+          <div class="tab-content" id="tab-mission">
+            <p>Our mission is to empower businesses with world-class design solutions that elevate their brand presence globally. We strive to deliver premium quality, innovative thinking, and exceptional customer service.</p>
+          </div>
+          <div class="tab-content" id="tab-vision">
+            <p>We envision a digital landscape where every brand, regardless of size, can access breathtaking design and cutting-edge technology to scale their impact and achieve their dreams.</p>
+          </div>
+        </div>
+        <div class="about-visual animate-on-scroll delay-1">
+          <img src="logo.png" alt="Prysal Printhub Logo" class="about-logo-anim">
+          <div class="glass-orb orb-1"></div>
+          <div class="glass-orb orb-2"></div>
+        </div>
+      </div>
+    </section>
+
+    <!-- 9. Trusted By -->
+    <section class="trusted-section animate-on-scroll">
+      <p class="trusted-text text-center">Trusted by businesses across Sri Lanka and internationally</p>
+      <div class="client-logos">
+        <div class="client-logo-placeholder magnetic"><span class="btn-text">Brand One</span></div>
+        <div class="client-logo-placeholder magnetic"><span class="btn-text">TechCorp</span></div>
+        <div class="client-logo-placeholder magnetic"><span class="btn-text">Global Inc</span></div>
+        <div class="client-logo-placeholder magnetic"><span class="btn-text">Silva Logistics</span></div>
+        <div class="client-logo-placeholder magnetic"><span class="btn-text">Studio X</span></div>
+      </div>
+    </section>
+
+    <!-- 3. Services Section -->
+    <section class="pillars-section" id="services">
+      <h3 class="section-title text-center animate-on-scroll">Our Expertise</h3>
+      <h2 class="section-heading text-center animate-on-scroll">Comprehensive Solutions</h2>
+      
+      <div class="pillars-grid">
+        
+        <div class="pillar-card animate-on-scroll hover-gradient-blue">
+          <div class="card-content">
+            <div class="pillar-icon">✧</div>
+            <h2>Brand & Identity</h2>
+            <p>Creating timeless visual foundations for premium businesses and memorable events.</p>
+            <div class="services-tags">
+              <span class="service-tag magnetic"><span class="btn-text">Logo Design</span></span>
+              <span class="service-tag magnetic"><span class="btn-text">Wedding Cards</span></span>
+              <span class="service-tag magnetic"><span class="btn-text">Custom Designing</span></span>
+              <span class="service-tag magnetic"><span class="btn-text">Digital Visiting Cards</span></span>
+              <span class="service-tag magnetic"><span class="btn-text">Banner Design</span></span>
+            </div>
+          </div>
+        </div>
+
+        <div class="pillar-card animate-on-scroll hover-gradient-purple delay-1">
+          <div class="card-content">
+            <div class="pillar-icon">💻</div>
+            <h2>Digital Real Estate</h2>
+            <p>Building gorgeous, high-performing digital platforms that engage users instantly.</p>
+            <div class="services-tags">
+              <span class="service-tag magnetic"><span class="btn-text">Website Designing</span></span>
+              <span class="service-tag magnetic"><span class="btn-text">UI/UX Design</span></span>
+              <span class="service-tag magnetic"><span class="btn-text">Video Editing</span></span>
+            </div>
+          </div>
+        </div>
+
+        <div class="pillar-card animate-on-scroll hover-gradient-orange delay-2">
+          <div class="card-content">
+            <div class="pillar-icon">📈</div>
+            <h2>Growth & Reach</h2>
+            <p>Scaling your brand's presence across the internet with targeted, data-driven strategies.</p>
+            <div class="services-tags">
+              <span class="service-tag magnetic"><span class="btn-text">Digital Marketing</span></span>
+              <span class="service-tag magnetic"><span class="btn-text">QR Code Generation</span></span>
+            </div>
+          </div>
+        </div>
+
+      </div>
+    </section>
+
+    <!-- 4. Portfolio Section -->
+    <section class="portfolio-section" id="portfolio">
+      <h3 class="section-title text-center animate-on-scroll">Selected Works</h3>
+      <h2 class="section-heading text-center animate-on-scroll">Premium Portfolio</h2>
+      
+      <div class="portfolio-filters animate-on-scroll">
+        <button class="filter-btn active magnetic" data-filter="all"><span class="btn-text">All</span></button>
+        <button class="filter-btn magnetic" data-filter="branding"><span class="btn-text">Branding</span></button>
+        <button class="filter-btn magnetic" data-filter="web"><span class="btn-text">Web Design</span></button>
+        <button class="filter-btn magnetic" data-filter="print"><span class="btn-text">Print & Social</span></button>
+      </div>
+
+      <div class="masonry-grid">
+        <!-- Item 1 -->
+        <div class="masonry-item branding animate-on-scroll">
+          <div class="portfolio-placeholder blue"></div>
+          <div class="portfolio-overlay">
+            <h4>TechCorp Identity</h4>
+            <p>Logo Design</p>
+          </div>
+        </div>
+        <!-- Item 2 -->
+        <div class="masonry-item web web-tall animate-on-scroll delay-1">
+          <div class="portfolio-placeholder purple"></div>
+          <div class="portfolio-overlay">
+            <h4>E-Commerce App</h4>
+            <p>UI/UX Design</p>
+          </div>
+        </div>
+        <!-- Item 3 -->
+        <div class="masonry-item print animate-on-scroll delay-2">
+          <div class="portfolio-placeholder orange"></div>
+          <div class="portfolio-overlay">
+            <h4>Royal Wedding</h4>
+            <p>Wedding Cards</p>
+          </div>
+        </div>
+        <!-- Item 4 -->
+        <div class="masonry-item branding animate-on-scroll">
+          <div class="portfolio-placeholder green"></div>
+          <div class="portfolio-overlay">
+            <h4>Global Logistics</h4>
+            <p>Brand Identity</p>
+          </div>
+        </div>
+        <!-- Item 5 -->
+        <div class="masonry-item print animate-on-scroll delay-1">
+          <div class="portfolio-placeholder red"></div>
+          <div class="portfolio-overlay">
+            <h4>Festival Poster</h4>
+            <p>Poster Design</p>
+          </div>
+        </div>
+        <!-- Item 6 -->
+        <div class="masonry-item web animate-on-scroll delay-2">
+          <div class="portfolio-placeholder blue"></div>
+          <div class="portfolio-overlay">
+            <h4>Creative Agency Site</h4>
+            <p>Website Design</p>
+          </div>
+        </div>
+      </div>
+      
+      <div class="text-center" style="margin-top: 4rem;">
+        <a href="#portfolio" class="btn-secondary magnetic"><span class="btn-text">View More Projects</span></a>
+      </div>
+    </section>
+
+    <!-- 5. Why Choose Us -->
+    <section class="features-section animate-on-scroll">
+      <h3 class="section-title text-center">The Prysal Advantage</h3>
+      <h2 class="section-heading text-center">Why Choose Us</h2>
+      
+      <div class="features-grid">
+        <div class="feature-card magnetic">
+          <div class="feature-icon"><span class="btn-text">💎</span></div>
+          <h4>Premium Quality</h4>
+        </div>
+        <div class="feature-card magnetic">
+          <div class="feature-icon"><span class="btn-text">⚡</span></div>
+          <h4>Fast Delivery</h4>
+        </div>
+        <div class="feature-card magnetic">
+          <div class="feature-icon"><span class="btn-text">🔄</span></div>
+          <h4>Unlimited Revisions</h4>
+        </div>
+        <div class="feature-card magnetic">
+          <div class="feature-icon"><span class="btn-text">💰</span></div>
+          <h4>Affordable Pricing</h4>
+        </div>
+        <div class="feature-card magnetic">
+          <div class="feature-icon"><span class="btn-text">👨‍💻</span></div>
+          <h4>Experienced Designers</h4>
+        </div>
+        <div class="feature-card magnetic">
+          <div class="feature-icon"><span class="btn-text">🤝</span></div>
+          <h4>Friendly Support</h4>
+        </div>
+        <div class="feature-card magnetic">
+          <div class="feature-icon"><span class="btn-text">🎨</span></div>
+          <h4>Creative Solutions</h4>
+        </div>
+        <div class="feature-card magnetic">
+          <div class="feature-icon"><span class="btn-text">⭐</span></div>
+          <h4>Customer Satisfaction</h4>
+        </div>
+      </div>
+    </section>
+
+    <!-- 7. Statistics Section -->
+    <section class="stats-section">
+      <div class="stats-grid">
+        <div class="stat-box animate-on-scroll">
+          <h2><span class="counter" data-target="150">0</span>+</h2>
+          <p>Happy Clients</p>
+        </div>
+        <div class="stat-box animate-on-scroll delay-1">
+          <h2><span class="counter" data-target="500">0</span>+</h2>
+          <p>Projects Completed</p>
+        </div>
+        <div class="stat-box animate-on-scroll delay-2">
+          <h2><span class="counter" data-target="5">0</span>+</h2>
+          <p>Years Experience</p>
+        </div>
+        <div class="stat-box animate-on-scroll delay-3">
+          <h2><span class="counter" data-target="98">0</span>%</h2>
+          <p>Client Satisfaction</p>
+        </div>
+      </div>
+    </section>
+
+    <!-- 8. Testimonials -->
+    <section class="testimonials-section" id="testimonials">
+      <h3 class="section-title text-center animate-on-scroll">Client Feedback</h3>
+      <h2 class="section-heading text-center animate-on-scroll">What They Say</h2>
+      
+      <div class="testimonial-carousel animate-on-scroll">
+        <div class="testimonial-track" id="testimonialTrack">
+          <!-- T1 -->
+          <div class="testimonial-card">
+            <div class="stars">⭐⭐⭐⭐⭐</div>
+            <p class="review-text">"Prysal Printhub completely transformed our brand identity. Their attention to detail and premium design aesthetic is unmatched in Sri Lanka."</p>
+            <div class="client-info">
+              <div class="client-photo bg-blue">S</div>
+              <div>
+                <h4>Sarah Jenkins</h4>
+                <p>CEO, TechCorp</p>
+              </div>
+            </div>
+          </div>
+          <!-- T2 -->
+          <div class="testimonial-card">
+            <div class="stars">⭐⭐⭐⭐⭐</div>
+            <p class="review-text">"The website they designed for us increased our conversion rate by 300%. Absolutely incredible team to work with. Highly recommended."</p>
+            <div class="client-info">
+              <div class="client-photo bg-purple">D</div>
+              <div>
+                <h4>David Silva</h4>
+                <p>Founder, Silva Logistics</p>
+              </div>
+            </div>
+          </div>
+          <!-- T3 -->
+          <div class="testimonial-card">
+            <div class="stars">⭐⭐⭐⭐⭐</div>
+            <p class="review-text">"Our wedding invitations were a masterpiece. They listened to exactly what we wanted and delivered something beyond our imagination."</p>
+            <div class="client-info">
+              <div class="client-photo bg-orange">A</div>
+              <div>
+                <h4>Amelia & Tom</h4>
+                <p>Happy Couple</p>
+              </div>
+            </div>
+          </div>
+        </div>
+        
+        <div class="carousel-nav">
+          <button id="prevTestimonial" class="magnetic"><span class="btn-text">←</span></button>
+          <button id="nextTestimonial" class="magnetic"><span class="btn-text">→</span></button>
+        </div>
+      </div>
+    </section>
+
+    <!-- 10. Pricing Preview -->
+    <section class="pricing-section animate-on-scroll">
+      <h3 class="section-title text-center">Investment</h3>
+      <h2 class="section-heading text-center">Starting Prices</h2>
+      
+      <div class="pricing-grid">
+        <div class="price-card magnetic">
+          <h4>Logo Design</h4>
+          <div class="price">Starting from <br> <span>LKR 5,000</span></div>
+          <a href="#contact" class="btn-secondary"><span class="btn-text">Request Quote</span></a>
+        </div>
+        <div class="price-card popular magnetic">
+          <div class="badge">Most Popular</div>
+          <h4>Website Design</h4>
+          <div class="price">Starting from <br> <span>LKR 30,000</span></div>
+          <a href="#contact" class="btn-primary"><span class="btn-text">Request Quote</span></a>
+        </div>
+        <div class="price-card magnetic">
+          <h4>Wedding Cards</h4>
+          <div class="price">Starting from <br> <span>LKR 2,500</span></div>
+          <a href="#contact" class="btn-secondary"><span class="btn-text">Request Quote</span></a>
+        </div>
+      </div>
+    </section>
+
+    <!-- 11. FAQ Section -->
+    <section class="faq-section animate-on-scroll" id="faq">
+      <h3 class="section-title text-center">Got Questions?</h3>
+      <h2 class="section-heading text-center">Frequently Asked Questions</h2>
+      
+      <div class="faq-container">
+        <div class="faq-item">
+          <div class="faq-question">How long does a project take? <span class="icon">+</span></div>
+          <div class="faq-answer"><p>Timelines depend on the project scope. A logo design typically takes 3-5 days, while a full website may take 2-4 weeks.</p></div>
+        </div>
+        <div class="faq-item">
+          <div class="faq-question">How many revisions are included? <span class="icon">+</span></div>
+          <div class="faq-answer"><p>We offer unlimited revisions to ensure you are 100% satisfied with the final result before launch or printing.</p></div>
+        </div>
+        <div class="faq-item">
+          <div class="faq-question">Do you work with international clients? <span class="icon">+</span></div>
+          <div class="faq-answer"><p>Yes, we serve clients globally. We communicate smoothly via email, WhatsApp, and Zoom to ensure perfect alignment.</p></div>
+        </div>
+        <div class="faq-item">
+          <div class="faq-question">What payment methods do you accept? <span class="icon">+</span></div>
+          <div class="faq-answer"><p>We accept direct bank transfers, credit cards, and popular digital payment methods.</p></div>
+        </div>
+        <div class="faq-item">
+          <div class="faq-question">Can you build custom websites? <span class="icon">+</span></div>
+          <div class="faq-answer"><p>Absolutely. We build premium, custom-coded web platforms (like this one) tailored precisely to your brand.</p></div>
+        </div>
+      </div>
+    </section>
+
+    <!-- 12. Final Call to Action -->
+    <section class="final-cta-section animate-on-scroll">
+      <h2>Let's Build Something <span class="text-gradient">Extraordinary</span></h2>
+      <p>Your brand deserves world-class design. Contact us today to discuss your vision.</p>
+      <div class="hero-buttons">
+        <a href="#contact" class="btn-primary magnetic"><span class="btn-text">Get Free Quote</span></a>
+        <a href="#contact" class="btn-secondary magnetic"><span class="btn-text">Contact Us</span></a>
+      </div>
+    </section>
+
+    <!-- 13. Footer -->
+    <footer id="contact" class="footer animate-on-scroll">
+      <div class="footer-grid">
+        <div class="footer-brand">
+          <div class="logo">
+            <img src="logo.png" alt="Prysal Printhub Logo" class="nav-logo-img">
+            <span>PRYSAL PRINTHUB</span>
+          </div>
+          <p>Sri Lanka's premium creative agency elevating brands across the globe.</p>
+        </div>
+        
+        <div class="footer-links">
+          <h4>Quick Links</h4>
+          <ul>
+            <li><a href="#about" class="magnetic"><span class="btn-text">About Us</span></a></li>
+            <li><a href="#services" class="magnetic"><span class="btn-text">Services</span></a></li>
+            <li><a href="#portfolio" class="magnetic"><span class="btn-text">Portfolio</span></a></li>
+            <li><a href="#testimonials" class="magnetic"><span class="btn-text">Testimonials</span></a></li>
+            <li><a href="#faq" class="magnetic"><span class="btn-text">FAQ</span></a></li>
+          </ul>
+        </div>
+        
+        <div class="footer-contact">
+          <h4>Contact Info</h4>
+          <ul>
+            <li><a href="mailto:Prysalprinthub@gmail.com" class="magnetic"><span class="btn-text">📧 Prysalprinthub@gmail.com</span></a></li>
+            <li><a href="tel:+94775103274" class="magnetic"><span class="btn-text">📞 +94 77 510 3274</span></a></li>
+          </ul>
+          <div class="social-links" style="margin-top: 1.5rem; display: flex; gap: 1rem;">
+            <a href="https://wa.me/94775103274" class="social-btn magnetic"><span class="btn-text">WA</span></a>
+            <a href="#" class="social-btn magnetic"><span class="btn-text">FB</span></a>
+            <a href="#" class="social-btn magnetic"><span class="btn-text">IG</span></a>
+            <a href="#" class="social-btn magnetic"><span class="btn-text">IN</span></a>
+          </div>
+        </div>
+      </div>
+      
+      <div class="footer-bottom">
+        <p class="copyright">&copy; 2026 Prysal Printhub. All Rights Reserved.</p>
+        <div class="policy-links">
+          <a href="#" class="magnetic"><span class="btn-text">Privacy Policy</span></a>
+          <a href="#" class="magnetic"><span class="btn-text">Terms of Service</span></a>
+        </div>
+      </div>
+    </footer>
+
+  </main>
+
+  <!-- 14. Floating Elements -->
+  <a href="https://wa.me/94775103274" target="_blank" class="floating-wa magnetic" aria-label="WhatsApp">
+    <span class="btn-text">💬</span>
+  </a>
+  <div class="floating-totop magnetic" id="scrollToTop" aria-label="Scroll to top">
+    <span class="btn-text">↑</span>
+  </div>
+
+  <script src="script.js"></script>
+</body>
+</html>
