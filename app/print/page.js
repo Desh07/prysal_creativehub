@@ -142,7 +142,7 @@ export default function Home() {
                 <Icons.Repeat size={14} />
                 <span>Switch to Design Hub</span>
               </a>
-              <MagneticButton href="#contact" className="hidden md:flex items-center justify-center bg-print-gradient hover:opacity-90 text-white px-8 py-3 rounded-full text-sm font-bold shadow-lg transition-all">
+              <MagneticButton href={content.social?.whatsapp || '#'} target="_blank" rel="noopener noreferrer" className="hidden md:flex items-center justify-center bg-print-gradient hover:opacity-90 text-white px-8 py-3 rounded-full text-sm font-bold shadow-lg transition-all">
                 Contact Us
               </MagneticButton>
             </div>
@@ -193,7 +193,9 @@ export default function Home() {
                   ))}
 
                   <a
-                    href="#contact"
+                    href={content.social?.whatsapp || '#'}
+                    target="_blank"
+                    rel="noopener noreferrer"
                     onClick={() => setIsMobileMenuOpen(false)}
                     className="bg-print-gradient hover:opacity-90 text-white py-4 rounded-xl shadow-lg mt-2"
                   >
