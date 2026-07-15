@@ -1,58 +1,56 @@
-# Prysal Print & Design Hub
+# Prysal Creative Hub
 
-A modern, highly optimized dual-portal web application built for Prysal Creative Hub in Matale, Sri Lanka. This platform features a high-performance frontend for clients and a bespoke, headless CMS for instant content updates.
+**Prysal Creative Hub** is a premium digital presence for a full-service creative agency based in Matale, Sri Lanka. The platform is built around a dual-portal concept — offering two distinct, specialized services under one brand roof.
 
-## 🚀 Tech Stack
+---
 
-- **Framework:** Next.js 14 (App Router)
-- **Styling:** Tailwind CSS
-- **Animations:** Framer Motion (Parallax, Magnetic Buttons, Interactive Particles)
-- **Database / Cloud Storage:** Supabase
-- **Hosting:** Vercel
+## 🖨️ Print Hub · 🎨 Design Hub
 
-## ✨ Features
+Most creative agencies either focus on printing or design. Prysal does both — and this website reflects exactly that.
 
-- **Dual-Portal Architecture:** Seamlessly switches between the "Print Hub" and "Design Hub" with distinct styling and content.
-- **Bespoke Headless CMS:** A custom `/admin` dashboard allowing authorized users to edit text, upload images, and crop media precisely to the required CSS aspect ratios.
-- **Automated Garbage Collection:** Supabase integration automatically deletes old/unused images when replaced, ensuring zero cloud storage bloat.
-- **Fully Responsive Design:** meticulously crafted breakpoints ensure pixel-perfect rendering across desktop, tablet, and mobile.
-- **Optimized Media:** Automatic WebP compression (85% quality) dramatically reduces payload sizes for lightning-fast page loads.
+- **The Print Hub** serves clients who need physical printing solutions — from everyday business cards and document services, to large-format flex banners, personalized gifts, and elegant wedding invitations.
+- **The Design Hub** serves clients who need digital creative work — including logo and brand identity, UI/UX design, digital marketing campaigns, video editing, and web development.
 
-## 🛠️ Local Development
+Each hub has its own distinct visual identity, color palette, and content, while sharing the same professional-grade infrastructure underneath.
 
-1. Clone the repository:
-   ```bash
-   git clone https://github.com/your-username/prysal-printhub.git
-   cd prysal-printhub
-   ```
+---
 
-2. Install dependencies:
-   ```bash
-   npm install
-   ```
+## ✨ What Was Built
 
-3. Configure Environment Variables (`.env.local`):
-   ```env
-   NEXT_PUBLIC_SUPABASE_URL=your_supabase_url
-   NEXT_PUBLIC_SUPABASE_ANON_KEY=your_supabase_anon_key
-   SUPABASE_SERVICE_ROLE_KEY=your_service_role_key
-   ADMIN_TOKEN=your_custom_admin_password
-   ```
+- **Dual-Portal Architecture** — Two fully independent, visually distinct web portals (Print & Design) that seamlessly coexist under one domain, each with their own branding, services, and content.
+- **Bespoke Headless CMS** — A custom-built content management system that allows the business owner to update images, headlines, pricing offers, and contact information in real-time — with zero coding knowledge required.
+- **Intelligent Image Pipeline** — Every image uploaded through the CMS is automatically cropped to the exact required aspect ratio, compressed to WebP format, and stored in the cloud. Old images are automatically purged when replaced, ensuring zero storage waste.
+- **Real-Time Cloud Content** — All website content is served live from Supabase cloud storage. Any change made through the CMS is reflected on the live website instantly.
+- **Offer & Festive Banner System** — A dedicated promotional banner section that can be toggled on/off and fully customized with a headline, subheadline, and call-to-action button.
+- **Animated, Interactive UI** — The site features physics-based particle animations, magnetic button effects, parallax scrolling, and smooth page transitions powered by Framer Motion — delivering a premium first impression to every visitor.
+- **Fully Responsive Design** — Pixel-perfect experience across all screen sizes, from large desktop monitors to small mobile phones.
 
-4. Run the development server:
-   ```bash
-   npm run dev
-   ```
-   Open [http://localhost:3000](http://localhost:3000) to view the client-facing site, and [http://localhost:3000/admin](http://localhost:3000/admin) to access the CMS.
+---
 
-## ☁️ Deployment
+## 🏗️ How It Was Developed
 
-This project is optimized for deployment on Vercel. Because Vercel utilizes a read-only filesystem, all CMS data (JSON config and images) are strictly routed through the Supabase Storage Bucket (`public-content`). 
+The platform was built from the ground up using a modern, production-grade tech stack:
 
-To deploy:
-1. Ensure all local changes are saved and published to Supabase via the CMS.
-2. Push to GitHub.
-3. Import the repository in Vercel and apply the 4 environment variables listed above.
+| Layer | Technology |
+| :--- | :--- |
+| Frontend Framework | Next.js 14 (App Router) |
+| Styling | Tailwind CSS |
+| Animations | Framer Motion |
+| Cloud Storage & Database | Supabase |
+| Deployment & Hosting | Vercel |
 
-## 📝 License
-Proprietary software. All rights reserved by Prysal Creative Hub.
+The architecture was specifically chosen to ensure that the website is **fast, scalable, and completely free to run** on a monthly basis. By leveraging the generous free tiers of Vercel and Supabase, the business incurs zero ongoing infrastructure cost.
+
+---
+
+## 💼 Key Business Benefits
+
+- **Zero Cost to Run** — Deployed on Vercel and Supabase free tiers with zero monthly infrastructure cost.
+- **No Developer Needed for Updates** — The CMS gives the business owner full control over all content.
+- **Instant Content Updates** — Changes go live in seconds, not days.
+- **Two Brands, One Platform** — A single, unified digital platform represents two distinct service lines with zero compromise on individual branding.
+- **Enterprise-Grade Reliability** — Hosted on globally distributed infrastructure with 99.9% uptime SLA.
+
+---
+
+*Designed & Developed with ❤️ for Prysal Creative Hub, Matale, Sri Lanka.*
