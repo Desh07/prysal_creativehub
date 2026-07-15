@@ -37,11 +37,7 @@ export default function SplitPortal() {
         >
           {/* Background Image */}
           <div className="absolute inset-0 bg-neutral-950">
-            <img 
-              src="/api/image?path=C:/Users/user/.gemini/antigravity-ide/brain/fe75fad9-9551-41f9-82ac-bcda122be709/uiux_designing_1783950475310.png" 
-              className="absolute inset-0 w-full h-full object-cover opacity-20 group-hover:opacity-40 transition-opacity duration-700" 
-              alt="Design Hub Background"
-            />
+
             <div className="absolute inset-0 opacity-60 bg-[radial-gradient(ellipse_at_center,_var(--tw-gradient-stops))] from-blue-900/60 via-neutral-950 to-neutral-950 group-hover:opacity-80 transition-opacity duration-700"></div>
             {/* Subtle grid pattern */}
             <div className="absolute inset-0 bg-[url('https://grainy-gradients.vercel.app/noise.svg')] opacity-20 mix-blend-overlay"></div>
@@ -92,11 +88,7 @@ export default function SplitPortal() {
         >
           {/* Background Image */}
           <div className="absolute inset-0 bg-neutral-900">
-            <img 
-              src="/api/image?path=C:/Users/user/.gemini/antigravity-ide/brain/fe75fad9-9551-41f9-82ac-bcda122be709/print_poster_1783887843621.png" 
-              className="absolute inset-0 w-full h-full object-cover opacity-10 group-hover:opacity-20 transition-opacity duration-700" 
-              alt="Print Hub Background"
-            />
+
             <div className="absolute inset-0 opacity-80 bg-[radial-gradient(ellipse_at_center,_var(--tw-gradient-stops))] from-amber-600/30 via-neutral-900 to-neutral-900 group-hover:opacity-95 transition-opacity duration-700"></div>
             {/* Ink splash / print pattern effect */}
             <div className="absolute inset-0 bg-[url('https://grainy-gradients.vercel.app/noise.svg')] opacity-20 mix-blend-overlay"></div>
