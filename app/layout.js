@@ -1,5 +1,5 @@
 import './globals.css'
-import { Analytics } from "@vercel/analytics/react"
+import { Analytics } from "@vercel/analytics/next"
 export const metadata = {
   title: {
     default: 'Prysal Creative Hub | Print & Design Services in Matale',
