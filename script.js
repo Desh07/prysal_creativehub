@@ -1,5 +1,66 @@
 document.addEventListener('DOMContentLoaded', () => {
   
+  // Navbar Scroll Logic
+  const navbar = document.querySelector('.navbar');
+  window.addEventListener('scroll', () => {
+    if (window.scrollY > 50) {
+      navbar.classList.add('scrolled');
+    } else {
+      navbar.classList.remove('scrolled');
+    }
+  });
+  
+  // 0. Hero Fullscreen Slider Logic
+  const slideItems = document.querySelectorAll('.slide-item');
+  const navDots = document.querySelectorAll('.nav-dot');
+  let currentFSIndex = 0;
+  let fsInterval;
+
+  function updateFSSlider() {
+    if (slideItems.length === 0) return;
+    
+    slideItems.forEach((item, i) => {
+      item.classList.remove('active');
+      navDots[i].classList.remove('active');
+      
+      if (i === currentFSIndex) {
+        item.classList.add('active');
+        navDots[i].classList.add('active');
+      }
+    });
+  }
+
+  function nextFSSlide() {
+    currentFSIndex = (currentFSIndex + 1) % slideItems.length;
+    updateFSSlider();
+  }
+
+  function startFSSlider() {
+    if (slideItems.length > 0) {
+      fsInterval = setInterval(nextFSSlide, 8000);
+    }
+  }
+
+  function stopFSSlider() {
+    clearInterval(fsInterval);
+  }
+
+  navDots.forEach((dot, i) => {
+    dot.addEventListener('click', () => {
+      currentFSIndex = i;
+      updateFSSlider();
+      stopFSSlider(); startFSSlider();
+    });
+  });
+
+  const heroFullscreen = document.querySelector('.hero-fullscreen');
+  if (heroFullscreen) {
+    heroFullscreen.addEventListener('mouseenter', stopFSSlider);
+    heroFullscreen.addEventListener('mouseleave', startFSSlider);
+    updateFSSlider();
+    startFSSlider();
+  }
+
   // 1. Intersection Observer for Scroll Animations
   const observer = new IntersectionObserver((entries) => {
     entries.forEach(entry => {
@@ -290,13 +351,13 @@ document.addEventListener('DOMContentLoaded', () => {
           this.y = canvas.height / 2;
         }
         
-        // Start larger (4px to 10px)
+        // Start larger (4px to 10px) as previously
         this.maxSize = Math.random() * 6 + 4; 
         this.size = this.maxSize;
         
-        // Radiate outwards faster to cover the page
+        // Radiate outwards slowly
         const angle = Math.random() * Math.PI * 2;
-        const speed = Math.random() * 2 + 0.5;
+        const speed = Math.random() * 0.5 + 0.2; // Keep the much slower speed
         this.speedX = Math.cos(angle) * speed;
         this.speedY = Math.sin(angle) * speed;
         

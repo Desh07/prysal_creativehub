@@ -1,0 +1,54 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+:root {
+  --foreground-rgb: 255, 255, 255;
+  --background-start-rgb: 10, 10, 10;
+  --background-end-rgb: 10, 10, 10;
+}
+
+body {
+  color: rgb(var(--foreground-rgb));
+  background: rgb(var(--background-start-rgb));
+  font-family: 'Inter', sans-serif;
+}
+
+/* Custom Scrollbar */
+::-webkit-scrollbar {
+  width: 8px;
+}
+::-webkit-scrollbar-track {
+  background: #111; 
+}
+::-webkit-scrollbar-thumb {
+  background: #333; 
+  border-radius: 4px;
+}
+::-webkit-scrollbar-thumb:hover {
+  background: #555; 
+}
+
+/* Brand Colors Matching Logo */
+.bg-brand-gradient {
+  background: linear-gradient(135deg, #3b82f6, #d946ef, #f97316, #84cc16);
+  background-size: 300% 300%;
+  animation: gradientShift 8s ease infinite;
+}
+.text-brand-gradient {
+  background: linear-gradient(135deg, #3b82f6, #d946ef, #f97316);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  background-size: 200% 200%;
+}
+@keyframes gradientShift {
+  0% { background-position: 0% 50%; }
+  50% { background-position: 100% 50%; }
+  100% { background-position: 0% 50%; }
+}
+
+.bg-print-gradient {
+  background: linear-gradient(135deg, #f97316, #ec4899, #eab308, #f43f5e);
+  background-size: 300% 300%;
+  animation: gradientShift 8s ease infinite;
+}

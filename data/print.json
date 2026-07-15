@@ -1,0 +1,98 @@
+{
+  "offer": {
+    "isActive": true,
+    "text": "10 % off on all orders placed before 05th of august 2026"
+  },
+  "customHero": {
+    "isActive": true,
+    "image": "https://kcdyaxemqmnjxncoqdmc.supabase.co/storage/v1/object/public/public-content/uploads/print/customHero/1784114858155-926505784-croppedimage.webp",
+    "hasButton": true,
+    "buttonText": "Grab Offer",
+    "headline": "Special New Year Offer",
+    "subheadline": "Celebrate with 20% off this festive season"
+  },
+  "hero": {
+    "headline": "Your Physical Printing Partner",
+    "subheadline": "From banners and lamination to offset and mug printing, we bring your physical brand to life.",
+    "stats": [
+      {
+        "value": "1000+",
+        "label": "Successful Projects"
+      },
+      {
+        "value": "5+",
+        "label": "Years Experience"
+      },
+      {
+        "value": "500+",
+        "label": "Happy Clients"
+      }
+    ],
+    "images": [
+      "https://kcdyaxemqmnjxncoqdmc.supabase.co/storage/v1/object/public/public-content/uploads/print/hero/1784110235415-386997827-croppedimage.webp",
+      "https://kcdyaxemqmnjxncoqdmc.supabase.co/storage/v1/object/public/public-content/uploads/print/hero/1784111430719-278450-croppedimage.webp",
+      "https://kcdyaxemqmnjxncoqdmc.supabase.co/storage/v1/object/public/public-content/uploads/print/hero/1784110472767-64119830-croppedimage.webp",
+      "https://kcdyaxemqmnjxncoqdmc.supabase.co/storage/v1/object/public/public-content/uploads/print/hero/1784110534542-33430145-croppedimage.webp",
+      "https://kcdyaxemqmnjxncoqdmc.supabase.co/storage/v1/object/public/public-content/uploads/print/hero/1784110727529-659940682-croppedimage.webp"
+    ]
+  },
+  "categories": [
+    {
+      "id": "general-printing",
+      "title": "General Printing & Photocopy",
+      "desc": "High-quality printouts, photocopying, and document services.",
+      "image": "https://kcdyaxemqmnjxncoqdmc.supabase.co/storage/v1/object/public/public-content/uploads/print/categories/1784113971854-493076898-croppedimage.webp",
+      "items": [
+        "Color & B/W Printouts",
+        "Photocopy & Document Binding",
+        "Lamination Services",
+        "Business Cards & ID Cards"
+      ]
+    },
+    {
+      "id": "large-format",
+      "title": "Large Format",
+      "desc": "Make a massive impact with our large format printing.",
+      "image": "/uploads/1784056342852-306229213-croppedimage.png",
+      "items": [
+        "Digital Flex Banners",
+        "Vinyl & Sticker Prints",
+        "Roll-up Stands",
+        "Signboards & Hoardings"
+      ]
+    },
+    {
+      "id": "personalized",
+      "title": "Personalized Gifts",
+      "desc": "Customized items perfect for gifts and souvenirs.",
+      "image": "https://kcdyaxemqmnjxncoqdmc.supabase.co/storage/v1/object/public/public-content/uploads/print/categories/1784113246866-68405689-croppedimage.webp",
+      "items": [
+        "Custom Mug Printing",
+        "Photo Frames & Albums",
+        "T-Shirt Printing",
+        "High-Quality Photo Prints"
+      ]
+    },
+    {
+      "id": "events",
+      "title": "Events & Weddings",
+      "desc": "Elegant printing for your special days.",
+      "image": "/uploads/1784051629917-555935129-croppedimage.png",
+      "items": [
+        "Wedding Invitations",
+        "Event Passes & Tickets",
+        "Thank You Cards",
+        "Menu Cards & Programs"
+      ]
+    }
+  ],
+  "contact": {
+    "phone": "+94775103274",
+    "email": "Prysalprinthub@gmail.com"
+  },
+  "social": {
+    "instagram": "https://instagram.com",
+    "facebook": "https://facebook.com",
+    "whatsapp": "https://wa.me/0775103274"
+  }
+}

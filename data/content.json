@@ -1,0 +1,92 @@
+{
+  "offer": {
+    "isActive": true,
+    "text": "10 % off on all orders placed before 10th of august 2026"
+  },
+  "customHero": {
+    "isActive": true,
+    "image": "/uploads/1784005032523-145859628-restaurants.png",
+    "hasButton": true,
+    "buttonText": "Grab Offer",
+    "headline": "Special New Year Offer",
+    "subheadline": "Celebrate with 20% on this festive season"
+  },
+  "hero": {
+    "headline": "Your Creative Design Partner",
+    "subheadline": "From elegant wedding invitations to professional business branding, we create beautiful designs that help you celebrate, connect, and grow.",
+    "stats": [
+      {
+        "value": "1000+",
+        "label": "Successful Projects"
+      },
+      {
+        "value": "5+",
+        "label": "Years Experience"
+      },
+      {
+        "value": "500+",
+        "label": "Happy Clients"
+      }
+    ],
+    "images": [
+      "/uploads/1783970333443-330702438-1353021.png",
+      "/uploads/1783970370132-37166865-132513-1920x1080-desktop-1080p-harry-potter-background-photo.jpg",
+      "/uploads/1783970383113-976464638-aditya-vyas-wmXVABZ7JBk-unsplash.jpg"
+    ]
+  },
+  "categories": [
+    {
+      "id": "digital-design",
+      "title": "Digital Design & Web Experiences",
+      "desc": "Premium websites, intuitive UI/UX, and timeless brand identities.",
+      "image": "C:/Users/user/.gemini/antigravity-ide/brain/fe75fad9-9551-41f9-82ac-bcda122be709/cat_digital_design_1783952124389.png",
+      "items": [
+        "Website Designing",
+        "UI/UX Designing",
+        "Logo Design & Brand Identity"
+      ]
+    },
+    {
+      "id": "event-printing",
+      "title": "Event & Celebratory Printing",
+      "desc": "Luxurious, custom-designed print materials for your special moments.",
+      "image": "/uploads/1783970484590-408411336-WhatsAppImage2026-07-13at11.42.09PM2.jpeg",
+      "items": [
+        "Wedding & Invitation Cards",
+        "Festival Designs",
+        "Custom Greeting Materials"
+      ]
+    },
+    {
+      "id": "corporate-printing",
+      "title": "Corporate & Large Format",
+      "desc": "High-impact visual communication for businesses and events.",
+      "image": "C:/Users/user/.gemini/antigravity-ide/brain/fe75fad9-9551-41f9-82ac-bcda122be709/cat_corporate_printing_1783952173036.png",
+      "items": [
+        "Banners & Large Format Posters",
+        "Digital & Physical Visiting Cards",
+        "Custom Corporate Prints"
+      ]
+    },
+    {
+      "id": "digital-marketing",
+      "title": "Digital Marketing & Media",
+      "desc": "Data-driven campaigns and professional multimedia production.",
+      "image": "C:/Users/user/.gemini/antigravity-ide/brain/fe75fad9-9551-41f9-82ac-bcda122be709/cat_digital_marketing_1783952206405.png",
+      "items": [
+        "Digital Marketing Ad Campaigns",
+        "Video Editing & Production",
+        "Interactive QR Code Generation"
+      ]
+    }
+  ],
+  "contact": {
+    "phone": "0775103274",
+    "email": "Prysalprinthub@gmail.com"
+  },
+  "social": {
+    "instagram": "https://instagram.com",
+    "facebook": "https://facebook.com",
+    "whatsapp": "https://wa.me/0775103274"
+  }
+}

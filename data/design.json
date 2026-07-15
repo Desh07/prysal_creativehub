@@ -1,0 +1,94 @@
+{
+  "offer": {
+    "isActive": true,
+    "text": "10 % off on all orders placed before 10th of august 2026"
+  },
+  "customHero": {
+    "isActive": true,
+    "image": "https://kcdyaxemqmnjxncoqdmc.supabase.co/storage/v1/object/public/public-content/uploads/design/customHero/1784114435524-663799430-croppedimage.webp",
+    "hasButton": true,
+    "buttonText": "Grab Offer",
+    "headline": "Special New Year Offer",
+    "subheadline": "Celebrate with 20% off this festive season"
+  },
+  "hero": {
+    "headline": "Your Creative Design Partner",
+    "subheadline": "From elegant wedding invitations to professional business branding, we create beautiful designs that help you celebrate, connect, and grow.",
+    "stats": [
+      {
+        "value": "1000+",
+        "label": "Successful Projects"
+      },
+      {
+        "value": "5+",
+        "label": "Years Experience"
+      },
+      {
+        "value": "500+",
+        "label": "Happy Clients"
+      }
+    ],
+    "images": [
+      "https://kcdyaxemqmnjxncoqdmc.supabase.co/storage/v1/object/public/public-content/uploads/design/hero/1784115229097-825922340-croppedimage.webp",
+      "https://kcdyaxemqmnjxncoqdmc.supabase.co/storage/v1/object/public/public-content/uploads/design/hero/1784115242753-156091188-croppedimage.webp",
+      "https://kcdyaxemqmnjxncoqdmc.supabase.co/storage/v1/object/public/public-content/uploads/design/hero/1784116105163-343864697-croppedimage.webp",
+      "https://kcdyaxemqmnjxncoqdmc.supabase.co/storage/v1/object/public/public-content/uploads/design/hero/1784115520011-681411752-croppedimage.webp",
+      "https://kcdyaxemqmnjxncoqdmc.supabase.co/storage/v1/object/public/public-content/uploads/design/hero/1784115929534-721966470-croppedimage.webp"
+    ]
+  },
+  "categories": [
+    {
+      "id": "web-design",
+      "title": "Web & App",
+      "desc": "Premium websites, intuitive UI/UX, and stunning digital experiences.",
+      "image": "C:/Users/user/.gemini/antigravity-ide/brain/fe75fad9-9551-41f9-82ac-bcda122be709/cat_digital_design_1783952124389.png",
+      "items": [
+        "Custom Website Designing",
+        "Mobile App UI/UX",
+        "Landing Page Creation"
+      ]
+    },
+    {
+      "id": "branding-graphics",
+      "title": "Brand Identity & Graphics",
+      "desc": "Timeless logos and comprehensive brand guidelines that make you stand out.",
+      "image": "https://kcdyaxemqmnjxncoqdmc.supabase.co/storage/v1/object/public/public-content/uploads/design/categories/1784116705570-323880395-croppedimage.webp",
+      "items": [
+        "Professional Logo Design",
+        "Complete Brand Guidelines",
+        "Social Media Graphics & Posts"
+      ]
+    },
+    {
+      "id": "digital-marketing",
+      "title": "Digital Marketing & SEO",
+      "desc": "Data-driven campaigns to boost your online presence and reach.",
+      "image": "C:/Users/user/.gemini/antigravity-ide/brain/fe75fad9-9551-41f9-82ac-bcda122be709/cat_corporate_printing_1783952173036.png",
+      "items": [
+        "Social Media Ad Campaigns",
+        "Search Engine Optimization (SEO)",
+        "Email Marketing Strategies"
+      ]
+    },
+    {
+      "id": "multimedia-video",
+      "title": "Multimedia & Video",
+      "desc": "Engaging video content and interactive digital media production.",
+      "image": "C:/Users/user/.gemini/antigravity-ide/brain/fe75fad9-9551-41f9-82ac-bcda122be709/cat_digital_marketing_1783952206405.png",
+      "items": [
+        "Professional Video Editing",
+        "Promo Video Production",
+        "Interactive QR Code Generation"
+      ]
+    }
+  ],
+  "contact": {
+    "phone": "0775103274",
+    "email": "Prysalprinthub@gmail.com"
+  },
+  "social": {
+    "instagram": "https://instagram.com",
+    "facebook": "https://facebook.com",
+    "whatsapp": "https://wa.me/0775103274"
+  }
+}
