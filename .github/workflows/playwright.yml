@@ -27,6 +27,8 @@ jobs:
       env:
         # Add any required environment variables for the tests here
         ADMIN_PASSWORD: ${{ secrets.ADMIN_PASSWORD }}
+        ADMIN_USERNAME: ${{ secrets.ADMIN_USERNAME }}
+        ADMIN_TOKEN: 'github-ci-test-token-123'
         
     - uses: actions/upload-artifact@v4
       if: always()
