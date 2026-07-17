@@ -1,24 +1,17 @@
 const { test, expect } = require('@playwright/test');
+const { DesignHubPage } = require('./pages/DesignHubPage');
+const { PrintHubPage } = require('./pages/PrintHubPage');
 
 test('User can successfully switch from design hub to print hub', async ({ page }) => {
-    // 1. Navigate to the correct design page
-    await page.goto('/design');
-
-    // 2. Click the toggle button
-    await page.getByRole('link', { name: 'Switch to Print Hub' }).click();
-
-    //3. Assertion: Wait for the page to switch to printhub
-    await expect(page).toHaveURL(/.*print/)
-
-})
+    const designHubPage = new DesignHubPage(page);
+    await designHubPage.goto();
+    await designHubPage.switchToPrintHub();
+    await expect(page).toHaveURL(/.*print/);
+});
 
 test('User can successfully switch from printhub to design hub', async ({ page }) => {
-    // 1. Navigate to the correct print page
-    await page.goto('/print');
-
-    // 2. Click the toogle button
-    await page.getByRole('link', { name: 'Switch to Design Hub' }).click();
-
-    //3. Assertion: Wait for the page to switch to designhub
-    await expect(page).toHaveURL(/.*design/)
-})
+    const printHubPage = new PrintHubPage(page);
+    await printHubPage.goto();
+    await printHubPage.switchToDesignHub();
+    await expect(page).toHaveURL(/.*design/);
+});

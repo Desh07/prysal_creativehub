@@ -1,51 +1,27 @@
 const { test, expect } = require('@playwright/test');
+// 1. Import our new Page Object!
+const { AdminLoginPage } = require('./pages/AdminLoginPage');
 
 test('Admin can log in to Print Hub successfully', async ({ page }) => {
-    // 1. Navigate to the correct admin login page
-    await page.goto('/admin/login');
+    // 2. Instantiate (create) the Page Object
+    const loginPage = new AdminLoginPage(page);
 
-    // 2. Fill in the username
-    // (Note: Playwright's .fill() automatically clicks the box first, so we don't need a separate .click() step!)
-    await page.getByRole('textbox', { name: 'Enter username' }).fill('admin');
+    // 3. Command the Page Object to do the heavy lifting!
+    await loginPage.goto();
 
-    // 3. SECURE LOGIN: Pull the password from the .env vault!
-    // (Make sure your .env file says ADMIN_PASSWORD=***********)
-    await page.getByRole('textbox', { name: 'Enter password' }).fill(process.env.ADMIN_PASSWORD || '');
+    // Pass in the username, password, and the portal name!
+    await loginPage.login('admin', process.env.ADMIN_PASSWORD || '', 'Print');
 
-    // 4. Select the portal
-    await page.getByRole('button', { name: 'Print Hub' }).click();
-
-    // FORCE WEBKIT TO WAIT FOR REACT TO HYDRATE (1000 milliseconds = 1 second)
-    await page.waitForTimeout(1000);
-
-    // 5. Click the Sign In button
-    await page.getByRole('button', { name: 'Sign In' }).click();
-
-    // 6. Assertion: Wait for the dashboard to load (Update this if the URL is different!)
+    // 4. Assertion
     await expect(page).toHaveURL(/.*admin\?site=print/);
 });
 
 test('Admin can log in to Design Hub successfully', async ({ page }) => {
-    // 1. Navigate to the correct admin login page
-    await page.goto('/admin/login');
+    const loginPage = new AdminLoginPage(page);
 
-    // 2. Fill in the username
-    // (Note: Playwright's .fill() automatically clicks the box first, so we don't need a separate .click() step!)
-    await page.getByRole('textbox', { name: 'Enter username' }).fill('admin');
+    await loginPage.goto();
+    // Same exact code, just pass 'Design' instead of 'Print'!
+    await loginPage.login('admin', process.env.ADMIN_PASSWORD || '', 'Design');
 
-    // 3. SECURE LOGIN: Pull the password from the .env vault!
-    // (Make sure your .env file says ADMIN_PASSWORD=***********)
-    await page.getByRole('textbox', { name: 'Enter password' }).fill(process.env.ADMIN_PASSWORD || '');
-
-    // 4. Select the portal
-    await page.getByRole('button', { name: 'Design Hub' }).click();
-
-    // FORCE WEBKIT TO WAIT FOR REACT TO HYDRATE (1000 milliseconds = 1 second)
-    await page.waitForTimeout(1000);
-
-    // 5. Click the Sign In button
-    await page.getByRole('button', { name: 'Sign In' }).click();
-
-    // 6. Assertion: Wait for the dashboard to load (Update this if the URL is different!)
     await expect(page).toHaveURL(/.*admin\?site=design/);
 });
