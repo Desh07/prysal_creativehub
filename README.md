@@ -60,6 +60,7 @@ To ensure enterprise-grade reliability, the platform is thoroughly tested with a
 - **E2E UI Automation** — Comprehensive test coverage using **Playwright**, simulating real user behaviors across the Print and Design hubs, component toggles, and mobile responsiveness.
 - **Secure Authentication Testing** — Automated validation of the Admin Dashboard login flows using securely injected environment variables.
 - **GitHub Actions Integration** — Fully configured CI/CD pipeline (`.github/workflows/playwright.yml`) that automatically installs dependencies, spins up the Next.js server, and runs the entire Playwright test suite on every push and pull request to the `main` branch.
+- **Strict Vercel CLI Deployments** — The default Vercel auto-deploy is disabled. Instead, if and only if all tests pass, GitHub Actions securely triggers a production deployment via the Vercel CLI using heavily restricted, injected authentication credentials (`VERCEL_TOKEN`, `VERCEL_ORG_ID`, `VERCEL_PROJECT_ID`).
 
 To run the test suite locally:
 ```bash
