@@ -53,4 +53,19 @@ The architecture was specifically chosen to ensure that the website is **fast, s
 
 ---
 
+## 🧪 Quality Assurance & CI/CD
+
+To ensure enterprise-grade reliability, the platform is thoroughly tested with an automated End-to-End (E2E) testing suite and integrated with a continuous CI/CD pipeline:
+
+- **E2E UI Automation** — Comprehensive test coverage using **Playwright**, simulating real user behaviors across the Print and Design hubs, component toggles, and mobile responsiveness.
+- **Secure Authentication Testing** — Automated validation of the Admin Dashboard login flows using securely injected environment variables.
+- **GitHub Actions Integration** — Fully configured CI/CD pipeline (`.github/workflows/playwright.yml`) that automatically installs dependencies, spins up the Next.js server, and runs the entire Playwright test suite on every push and pull request to the `main` branch.
+
+To run the test suite locally:
+```bash
+npm run test:e2e
+```
+
+---
+
 *Designed & Developed with ❤️ for Prysal Creative Hub, Matale, Sri Lanka.*
