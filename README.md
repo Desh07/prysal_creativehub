@@ -62,10 +62,38 @@ To ensure enterprise-grade reliability, the platform is thoroughly tested with a
 - **GitHub Actions Integration** — Fully configured CI/CD pipeline (`.github/workflows/playwright.yml`) that automatically installs dependencies, spins up the Next.js server, and runs the entire Playwright test suite on every push and pull request to the `main` branch.
 - **Strict Vercel CLI Deployments** — The default Vercel auto-deploy is disabled. Instead, if and only if all tests pass, GitHub Actions securely triggers a production deployment via the Vercel CLI using heavily restricted, injected authentication credentials (`VERCEL_TOKEN`, `VERCEL_ORG_ID`, `VERCEL_PROJECT_ID`).
 
-To run the test suite locally:
-```bash
-npm run test:e2e
-```
+---
+
+## 💻 Local Development
+
+To run this project locally on your machine, follow these steps:
+
+**1. Clone the repository**
+\`\`\`bash
+git clone https://github.com/yourusername/your-repo-name.git
+cd your-repo-name
+\`\`\`
+
+**2. Install dependencies**
+\`\`\`bash
+npm install
+\`\`\`
+
+**3. Set up Environment Variables**
+Since the `.env` file is ignored by Git for security reasons, you will need to create your own locally. 
+Create a file named `.env.local` in the root directory and add your Supabase credentials:
+\`\`\`env
+NEXT_PUBLIC_SUPABASE_URL=your_supabase_project_url
+NEXT_PUBLIC_SUPABASE_ANON_KEY=your_supabase_anon_key
+ADMIN_PASSWORD=your_local_testing_password
+\`\`\`
+
+**4. Start the development server**
+\`\`\`bash
+npm run dev
+\`\`\`
+Open [http://localhost:3000](http://localhost:3000) in your browser to view the application.
+
 
 ---
 

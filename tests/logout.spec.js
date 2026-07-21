@@ -15,4 +15,9 @@ test('Admin can successfully logout of the system', async ({ page }) => {
     // 3. Perform the Dashboard Page Actions
     await dashboardPage.logout();
     await expect(page).toHaveURL(/.*admin\/login/);
+
+    // 4. Security Check: Try to force your way back into the dashboard!
+    await page.goto('/admin');
+    // 5. Assert that the server kicks you back to the login page
+    await expect(page).toHaveURL(/.*admin\/login/);
 });
