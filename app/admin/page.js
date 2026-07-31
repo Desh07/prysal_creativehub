@@ -25,7 +25,7 @@ export default function AdminDashboard() {
     setSiteMode(initialSite);
     
     setContent(null);
-    fetch(`/api/content?site=${initialSite}`, { cache: 'no-store' })
+    fetch(`/api/content?site=${initialSite}&t=${Date.now()}`, { cache: 'no-store' })
       .then(res => res.json())
       .then(data => setContent(data));
   }, []);
