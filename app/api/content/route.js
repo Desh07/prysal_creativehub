@@ -3,6 +3,8 @@ import fs from 'fs';
 import path from 'path';
 
 export const dynamic = 'force-dynamic';
+export const revalidate = 0;
+export const fetchCache = 'force-no-store';
 
 function getFileName(request) {
   const url = new URL(request.url);
@@ -25,24 +27,33 @@ export async function GET(request) {
     const storagePath = `data/${fileName}`;
     const localPath = path.join(process.cwd(), 'data', fileName);
 
+    const noCacheHeaders = {
+      'Cache-Control': 'no-store, no-cache, must-revalidate, proxy-revalidate, max-age=0',
+      'Pragma': 'no-cache',
+      'Expires': '0',
+    };
+
     // In development: always use local JSON (clean source of truth)
     // This ensures clean data is used before being pushed to Supabase via Save
     if (process.env.NODE_ENV === 'development' && fs.existsSync(localPath)) {
       const fileContent = fs.readFileSync(localPath, 'utf8');
       console.log(`📁 DEV: Content loaded from local: ${fileName}`);
-      return NextResponse.json(JSON.parse(fileContent));
+      return NextResponse.json(JSON.parse(fileContent), { headers: noCacheHeaders });
     }
 
     // Production (Vercel): read from Supabase
     const supabase = await getSupabaseClient();
     if (supabase) {
-      const { data, error } = await supabase.storage.from('public-content').download(storagePath);
-      if (!error && data) {
-        const text = await data.text();
-        console.log(`📥 Content loaded from Supabase: ${fileName}`);
-        return NextResponse.json(JSON.parse(text));
+      const { data: { publicUrl } } = supabase.storage.from('public-content').getPublicUrl(storagePath);
+      // Fetch the public URL with a timestamp to completely bypass Supabase CDN caching
+      const res = await fetch(`${publicUrl}?t=${Date.now()}`, { cache: 'no-store' });
+
+      if (res.ok) {
+        const json = await res.json();
+        console.log(`📥 Content loaded from Supabase Public URL: ${fileName}`);
+        return NextResponse.json(json, { headers: noCacheHeaders });
       }
-      console.warn(`⚠️ Supabase read failed for ${fileName}:`, error?.message);
+      console.warn(`⚠️ Supabase read failed for ${fileName}:`, res.statusText);
     }
 
     return NextResponse.json({ error: 'Data not found' }, { status: 404 });

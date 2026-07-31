@@ -1,15 +1,15 @@
 {
   "offer": {
-    "isActive": false,
+    "isActive": true,
     "text": "50 % off on all orders placed before 10th of august 2026"
   },
   "customHero": {
-    "isActive": false,
+    "isActive": true,
     "image": "https://kcdyaxemqmnjxncoqdmc.supabase.co/storage/v1/object/public/public-content/uploads/design/customHero/1784713379527-697431281-croppedimage.webp",
     "hasButton": true,
     "buttonText": "Grab Offer",
     "headline": "Special New Year Offer",
-    "subheadline": "Celebrate with 20% off this festive season"
+    "subheadline": "Celebrate with 15% off on all designing services this festive season"
   },
   "hero": {
     "headline": "Your Creative Design Partner",
