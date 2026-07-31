@@ -8,9 +8,13 @@ export class AdminDashboardPage {
     }
 
     /**
-     * Action: Click the sign out button
+     * Action: Click the sign out button and confirm in the modal
      */
     async logout() {
-        await this.signOutButton.click();
+        // Click the first Sign Out button (in the nav bar)
+        await this.page.getByRole('button', { name: 'Sign Out' }).first().click();
+        
+        // Click the second Sign Out button (inside the confirmation modal)
+        await this.page.getByRole('button', { name: 'Sign Out' }).last().click();
     }
 }
