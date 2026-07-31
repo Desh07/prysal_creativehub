@@ -1,11 +1,11 @@
 {
   "offer": {
-    "isActive": true,
-    "text": "10 % off on all orders placed before 10th of august 2026"
+    "isActive": false,
+    "text": "50 % off on all orders placed before 10th of august 2026"
   },
   "customHero": {
-    "isActive": true,
-    "image": "https://kcdyaxemqmnjxncoqdmc.supabase.co/storage/v1/object/public/public-content/uploads/design/customHero/1784114435524-663799430-croppedimage.webp",
+    "isActive": false,
+    "image": "https://kcdyaxemqmnjxncoqdmc.supabase.co/storage/v1/object/public/public-content/uploads/design/customHero/1784713379527-697431281-croppedimage.webp",
     "hasButton": true,
     "buttonText": "Grab Offer",
     "headline": "Special New Year Offer",

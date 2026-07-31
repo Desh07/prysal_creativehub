@@ -1,8 +1,8 @@
 export class LandingPage {
     constructor(page) {
         this.page = page;
-        this.designHubLink = page.getByRole('link', { name: 'Design Hub Web Design, UI/UX' });
-        this.printHubLink = page.getByRole('link', { name: 'Print Shop Printouts,' });
+        this.designHubLink = page.getByRole('link', { name: 'Design Hub Web Design, UI/UX,' });
+        this.printHubLink = page.getByRole('link', { name: 'Print Hub Printouts,' });
     }
 
     async goto() {

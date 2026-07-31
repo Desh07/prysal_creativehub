@@ -110,7 +110,7 @@ export default function SplitPortal() {
               transition={{ delay: 0.3 }}
               className="text-4xl md:text-6xl font-black text-white tracking-tight mb-4"
             >
-              Print <span className="text-transparent bg-clip-text bg-gradient-to-r from-amber-400 to-orange-500">Shop</span>
+              Print <span className="text-transparent bg-clip-text bg-gradient-to-r from-amber-400 to-orange-500">Hub</span>
             </motion.h1>
             <motion.p 
               initial={{ y: 20, opacity: 0 }}

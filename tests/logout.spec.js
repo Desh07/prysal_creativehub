@@ -21,3 +21,4 @@ test('Admin can successfully logout of the system', async ({ page }) => {
     // 5. Assert that the server kicks you back to the login page
     await expect(page).toHaveURL(/.*admin\/login/);
 });
+

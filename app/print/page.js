@@ -597,6 +597,7 @@ export default function Home() {
       <div className="fixed bottom-6 left-6 z-[999]">
         <MagneticButton
           href={content.social?.whatsapp || "https://wa.me/1234567890"}
+          target="_blank"
           className="w-14 h-14 bg-green-500 rounded-full flex items-center justify-center text-white shadow-[0_0_20px_rgba(34,197,94,0.4)] hover:shadow-[0_0_30px_rgba(34,197,94,0.6)] transition-all"
         >
           <Icons.MessageCircle size={28} />
@@ -745,7 +746,7 @@ const ParticleCanvas = () => {
   return <canvas ref={canvasRef} className="fixed inset-0 pointer-events-none z-0 opacity-60 mix-blend-multiply" />;
 };
 
-const MagneticButton = ({ children, className, href, onClick }) => {
+const MagneticButton = ({ children, className, href, onClick, target, rel }) => {
   const ref = useRef(null);
   const [position, setPosition] = useState({ x: 0, y: 0 });
 
@@ -766,6 +767,8 @@ const MagneticButton = ({ children, className, href, onClick }) => {
     <motion.a
       href={href}
       onClick={onClick}
+      target={target}
+      rel={rel}
       ref={ref}
       onMouseMove={handleMouse}
       onMouseLeave={reset}

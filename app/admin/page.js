@@ -16,6 +16,7 @@ export default function AdminDashboard() {
   const [croppingPath, setCroppingPath] = useState(null);
   const [croppingIndex, setCroppingIndex] = useState(null);
   const [croppingAspect, setCroppingAspect] = useState(16 / 9);
+  const [showLogoutModal, setShowLogoutModal] = useState(false);
   const router = useRouter();
 
   useEffect(() => {
@@ -153,14 +154,24 @@ export default function AdminDashboard() {
       
       {/* Sidebar Navigation */}
       <aside className="w-full md:w-72 bg-white border-r border-gray-200 flex flex-col sticky top-0 md:h-screen z-20 shadow-sm md:shadow-none">
-        <div className="p-8 pb-4">
-          <h1 className="font-black text-2xl tracking-tight leading-none mb-1">
-            PRYSAL
-          </h1>
-          <p className="text-xs font-black text-gray-400 tracking-widest uppercase mb-1">Admin Workspace</p>
-          <div className="inline-flex items-center space-x-1 bg-black text-white text-[10px] font-bold px-2 py-1 rounded">
-            {siteMode === 'design' ? <Icons.MonitorSmartphone size={10} /> : <Icons.Printer size={10} />}
-            <span className="uppercase">{siteMode} Hub</span>
+        <div className="p-6 md:p-8 pb-4 flex justify-between items-start">
+          <div>
+            <h1 className="font-black text-2xl tracking-tight leading-none mb-1">
+              PRYSAL
+            </h1>
+            <p className="text-xs font-black text-gray-400 tracking-widest uppercase mb-1">Admin Workspace</p>
+            <div className="inline-flex items-center space-x-1 bg-black text-white text-[10px] font-bold px-2 py-1 rounded">
+              {siteMode === 'design' ? <Icons.MonitorSmartphone size={10} /> : <Icons.Printer size={10} />}
+              <span className="uppercase">{siteMode} Hub</span>
+            </div>
+          </div>
+          <div className="flex md:hidden flex-col space-y-2">
+            <a href="/" target="_blank" className="flex items-center justify-center space-x-1 px-3 py-2 rounded-lg text-xs font-bold bg-gray-100 text-gray-600">
+              <Icons.ExternalLink size={14} /> <span>Live Site</span>
+            </a>
+            <button onClick={() => setShowLogoutModal(true)} className="flex items-center justify-center space-x-1 px-3 py-2 rounded-lg text-xs font-bold bg-red-50 text-red-600">
+              <Icons.LogOut size={14} /> <span>Sign Out</span>
+            </button>
           </div>
         </div>
         
@@ -202,7 +213,7 @@ export default function AdminDashboard() {
             <Icons.ExternalLink size={18} />
             <span>View Live Site</span>
           </a>
-          <button onClick={handleLogout} className="flex items-center justify-center space-x-2 w-full p-4 rounded-xl font-bold text-red-600 bg-red-50 hover:bg-red-100 transition-colors">
+          <button onClick={() => setShowLogoutModal(true)} className="flex items-center justify-center space-x-2 w-full p-4 rounded-xl font-bold text-red-600 bg-red-50 hover:bg-red-100 transition-colors">
             <Icons.LogOut size={18} />
             <span>Sign Out</span>
           </button>
@@ -212,13 +223,13 @@ export default function AdminDashboard() {
       {/* Main Workspace */}
       <main className="flex-1 flex flex-col md:h-screen overflow-hidden">
         
-        {/* Sticky Top Action Bar */}
-        <header className="bg-white/90 backdrop-blur-md border-b border-gray-200 px-6 md:px-10 py-5 flex flex-col md:flex-row md:items-center justify-between sticky top-0 z-10 shadow-sm gap-4">
-          <div>
-            <div className="flex flex-col md:flex-row md:items-center md:space-x-4 mb-1">
-              <h2 className="text-2xl font-black">{tabs.find(t => t.id === activeTab)?.label} - {siteMode.toUpperCase()} HUB</h2>
+        {/* Sticky Top / Fixed Bottom Action Bar */}
+        <header className="bg-white/90 backdrop-blur-md border-t md:border-t-0 border-b border-gray-200 px-4 md:px-10 py-4 md:py-5 flex flex-row items-center justify-between fixed bottom-0 left-0 right-0 md:static md:sticky md:top-0 z-50 shadow-[0_-10px_20px_rgba(0,0,0,0.05)] md:shadow-sm gap-4">
+          <div className="flex-1 truncate mr-2">
+            <div className="flex items-center space-x-2 mb-1 truncate">
+              <h2 className="text-lg md:text-2xl font-black truncate">{tabs.find(t => t.id === activeTab)?.label} <span className="hidden md:inline">- {siteMode.toUpperCase()} HUB</span></h2>
             </div>
-            <p className="text-sm text-gray-500 font-medium hidden md:block">Manage your website content securely.</p>
+            <p className="text-xs md:text-sm text-gray-500 font-medium hidden md:block">Manage your website content securely.</p>
           </div>
           <div className="flex items-center space-x-4">
             <AnimatePresence>
@@ -227,7 +238,7 @@ export default function AdminDashboard() {
                   initial={{ opacity: 0, x: 20 }}
                   animate={{ opacity: 1, x: 0 }}
                   exit={{ opacity: 0, x: 20 }}
-                  className="hidden md:flex items-center space-x-2 text-green-600 bg-green-50 px-4 py-2 rounded-full font-bold text-sm"
+                  className="flex items-center space-x-2 text-green-600 bg-green-50 px-4 py-2 rounded-full font-bold text-sm"
                 >
                   <Icons.CheckCircle2 size={16} />
                   <span>Published</span>
@@ -647,6 +658,47 @@ export default function AdminDashboard() {
           }} 
         />
       )}
+
+      {/* Logout Confirmation Modal */}
+      <AnimatePresence>
+        {showLogoutModal && (
+          <motion.div 
+            initial={{ opacity: 0 }} 
+            animate={{ opacity: 1 }} 
+            exit={{ opacity: 0 }} 
+            className="fixed inset-0 z-[1000] flex items-center justify-center bg-black/60 backdrop-blur-sm p-4"
+          >
+            <motion.div 
+              initial={{ scale: 0.9, y: 20 }} 
+              animate={{ scale: 1, y: 0 }} 
+              exit={{ scale: 0.9, y: 20 }} 
+              className="bg-white rounded-3xl p-8 max-w-sm w-full shadow-2xl border border-gray-100"
+            >
+              <div className="flex flex-col items-center text-center">
+                <div className="w-16 h-16 bg-red-50 text-red-500 rounded-full flex items-center justify-center mb-4">
+                  <Icons.LogOut size={32} />
+                </div>
+                <h3 className="text-2xl font-black mb-2">Sign Out?</h3>
+                <p className="text-gray-500 font-medium mb-8">Are you sure you want to end your session? You will need to log in again to make changes.</p>
+                <div className="flex flex-col sm:flex-row w-full gap-3">
+                  <button 
+                    onClick={() => setShowLogoutModal(false)}
+                    className="flex-1 px-4 py-3 rounded-xl font-bold text-gray-600 bg-gray-100 hover:bg-gray-200 transition-colors"
+                  >
+                    Cancel
+                  </button>
+                  <button 
+                    onClick={handleLogout}
+                    className="flex-1 px-4 py-3 rounded-xl font-bold text-white bg-red-500 hover:bg-red-600 transition-colors"
+                  >
+                    Sign Out
+                  </button>
+                </div>
+              </div>
+            </motion.div>
+          </motion.div>
+        )}
+      </AnimatePresence>
     </div>
   );
 }
