@@ -75,6 +75,7 @@ export async function POST(request) {
     if (supabase) {
       const { error } = await supabase.storage.from('public-content').upload(storagePath, jsonString, {
         contentType: 'application/json',
+        cacheControl: '0',
         upsert: true
       });
       if (error) {
