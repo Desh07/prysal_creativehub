@@ -233,7 +233,7 @@ export default function Home() {
                 whileInView={{ opacity: 1, y: 0 }}
                 viewport={{ once: true }}
                 transition={{ duration: 0.6 }}
-                className="text-4xl md:text-6xl font-black text-white mb-4 tracking-tight drop-shadow-xl"
+                className="text-3xl sm:text-4xl md:text-6xl font-black text-white mb-4 tracking-tight drop-shadow-xl break-words"
               >
                 {content.customHero.headline}
               </motion.h2>
@@ -564,9 +564,9 @@ export default function Home() {
                 <Icons.Phone className="text-zinc-500 group-hover:text-orange-500 transition-colors" />
                 <span className="text-xl font-bold text-zinc-800 group-hover:text-orange-500">{content.contact.phone}</span>
               </a>
-              <a href={`mailto:${content.contact.email}`} className="flex items-center justify-center space-x-3 bg-print-gradient hover:opacity-90 text-white px-8 py-4 rounded-2xl transition-all shadow-lg hover:shadow-xl hover:-translate-y-1 border border-transparent">
-                <Icons.Mail className="text-white" />
-                <span className="text-xl font-bold">{content.contact.email}</span>
+              <a href={`mailto:${content.contact.email}`} className="flex items-center justify-center space-x-3 bg-print-gradient hover:opacity-90 text-white px-4 sm:px-8 py-4 rounded-2xl transition-all shadow-lg hover:shadow-xl hover:-translate-y-1 border border-transparent w-full max-w-full overflow-hidden">
+                <Icons.Mail className="text-white shrink-0" />
+                <span className="text-sm sm:text-base md:text-xl font-bold break-all">{content.contact.email}</span>
               </a>
             </div>
 

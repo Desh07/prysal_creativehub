@@ -233,7 +233,7 @@ export default function Home() {
                 whileInView={{ opacity: 1, y: 0 }}
                 viewport={{ once: true }}
                 transition={{ duration: 0.6 }}
-                className="text-4xl md:text-6xl font-black text-white mb-4 tracking-tight drop-shadow-xl"
+                className="text-3xl sm:text-4xl md:text-6xl font-black text-white mb-4 tracking-tight drop-shadow-xl break-words"
               >
                 {content.customHero.headline}
               </motion.h2>
@@ -399,9 +399,9 @@ export default function Home() {
                 </div>
 
                 {/* Content Overlay */}
-                <div className="absolute inset-0 p-6 md:p-10 flex flex-col justify-end z-10">
-                  <h3 className="text-2xl md:text-3xl font-black mb-3 text-white tracking-tight">{category.title}</h3>
-                  <p className="text-gray-300 text-sm md:text-lg mb-6 leading-relaxed max-w-md">{category.desc}</p>
+                <div className="absolute inset-0 p-6 md:p-10 flex flex-col justify-end z-10 overflow-y-auto scrollbar-hide">
+                  <h3 className="text-xl md:text-3xl font-black mb-2 text-white tracking-tight break-words">{category.title}</h3>
+                  <p className="text-gray-300 text-xs sm:text-sm md:text-base mb-4 leading-relaxed max-w-md break-words">{category.desc}</p>
 
                   <ul className="space-y-3">
                     {category.items.map((item, i) => (
@@ -569,9 +569,9 @@ export default function Home() {
                 <Icons.Phone className="text-gray-400 group-hover:text-blue-400 transition-colors" />
                 <span className="text-xl font-bold text-white group-hover:text-blue-400 transition-colors">{content.contact.phone}</span>
               </a>
-              <a href={`mailto:${content.contact.email}`} className="flex items-center justify-center space-x-3 bg-brand-gradient text-white px-8 py-4 rounded-2xl transition-all shadow-lg hover:shadow-xl hover:-translate-y-1">
-                <Icons.Mail className="text-white/80" />
-                <span className="text-xl font-bold">{content.contact.email}</span>
+              <a href={`mailto:${content.contact.email}`} className="flex items-center justify-center space-x-3 bg-brand-gradient text-white px-4 sm:px-8 py-4 rounded-2xl transition-all shadow-lg hover:shadow-xl hover:-translate-y-1 w-full max-w-full overflow-hidden">
+                <Icons.Mail className="text-white/80 shrink-0" />
+                <span className="text-sm sm:text-base md:text-xl font-bold break-all">{content.contact.email}</span>
               </a>
             </div>
 
