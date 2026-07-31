@@ -60,7 +60,7 @@ export default function Home() {
       .then(res => res.json())
       .then(data => setContent(data));
 
-      const handleScroll = () => {
+    const handleScroll = () => {
       setIsScrolled(window.scrollY > 50);
       setIsMobileMenuOpen(false); // Close mobile menu on scroll
 
@@ -185,7 +185,11 @@ export default function Home() {
                     <a
                       key={section}
                       href={`#${section}`}
-                      onClick={() => setIsMobileMenuOpen(false)}
+                      onClick={(e) => {
+                        e.preventDefault();
+                        setIsMobileMenuOpen(false);
+                        document.getElementById(section)?.scrollIntoView({ behavior: 'smooth' });
+                      }}
                       className={`capitalize ${activeSection === section ? 'text-blue-400' : 'text-white'}`}
                     >
                       {section}
@@ -221,10 +225,10 @@ export default function Home() {
             />
           </motion.div>
           <div className="absolute inset-0 bg-black/50 z-10"></div>
-          
+
           <div className="relative z-20 text-center px-6 max-w-4xl mx-auto flex flex-col items-center">
             {content.customHero.headline && (
-              <motion.h2 
+              <motion.h2
                 initial={{ opacity: 0, y: 20 }}
                 whileInView={{ opacity: 1, y: 0 }}
                 viewport={{ once: true }}
@@ -235,7 +239,7 @@ export default function Home() {
               </motion.h2>
             )}
             {content.customHero.subheadline && (
-              <motion.p 
+              <motion.p
                 initial={{ opacity: 0, y: 20 }}
                 whileInView={{ opacity: 1, y: 0 }}
                 viewport={{ once: true }}
@@ -252,7 +256,7 @@ export default function Home() {
                 viewport={{ once: true }}
                 transition={{ duration: 0.6, delay: 0.2 }}
               >
-                <a 
+                <a
                   href={content.social?.whatsapp || '#'}
                   target="_blank"
                   rel="noopener noreferrer"
@@ -427,7 +431,7 @@ export default function Home() {
       <section className="py-8 bg-neutral-900 border-y border-neutral-800 overflow-hidden relative">
         <div className="absolute inset-y-0 left-0 w-48 bg-gradient-to-r from-neutral-900 to-transparent z-10 pointer-events-none"></div>
         <div className="absolute inset-y-0 right-0 w-48 bg-gradient-to-l from-neutral-900 to-transparent z-10 pointer-events-none"></div>
-        
+
         <div className="flex w-[200%] items-center justify-start animate-marquee whitespace-nowrap">
           {[1, 2].map((group) => (
             <div key={group} className="flex items-center space-x-12 px-6">
@@ -451,7 +455,8 @@ export default function Home() {
             </div>
           ))}
         </div>
-        <style dangerouslySetInnerHTML={{__html: `
+        <style dangerouslySetInnerHTML={{
+          __html: `
           @keyframes marquee {
             0% { transform: translateX(0); }
             100% { transform: translateX(-50%); }
@@ -475,10 +480,10 @@ export default function Home() {
         <div className="max-w-7xl mx-auto text-center">
           <h3 className="text-sm font-bold text-neutral-500 uppercase tracking-[0.2em] mb-10">Trusted By Businesses Across Sri Lanka</h3>
           <div className="flex flex-wrap justify-center items-center gap-x-12 gap-y-6">
-            <span className="text-lg md:text-xl font-bold text-neutral-400">Konnect BPO Technologies (PVT) Ltd</span>
+            <span className="text-lg md:text-xl font-bold text-neutral-400">KONNECT BPO TECHNOLOGIES (PVT) LTD</span>
             <span className="text-lg md:text-xl font-bold text-neutral-400">NEW FOOD CORNER (PVT) LTD</span>
-            <span className="text-lg md:text-xl font-bold text-neutral-400">Dilan Trading Company PVT LTD</span>
-            <span className="text-lg md:text-xl font-bold text-neutral-400">Aarundhraa universals pvt ltd</span>
+            <span className="text-lg md:text-xl font-bold text-neutral-400">DILAN TRADING COMPANY (PVT) LTD</span>
+            <span className="text-lg md:text-xl font-bold text-neutral-400">AARUNDHRAA UNIVERSALS (PVT) LTD</span>
           </div>
         </div>
       </section>
@@ -530,7 +535,7 @@ export default function Home() {
               </motion.div>
             ))}
           </div>
-          
+
 
 
         </div>
@@ -542,13 +547,13 @@ export default function Home() {
 
           {/* Left: Google Map */}
           <div className="w-full lg:w-1/2 relative h-[350px] lg:h-[450px] rounded-3xl overflow-hidden border border-neutral-700 shadow-lg">
-            <iframe 
-              src="https://maps.google.com/maps?q=733,%20mandandawela,%20Matale%2021000&t=&z=15&ie=UTF8&iwloc=&output=embed" 
-              width="100%" 
-              height="100%" 
-              style={{ border: 0 }} 
-              allowFullScreen="" 
-              loading="lazy" 
+            <iframe
+              src="https://maps.google.com/maps?q=733,%20mandandawela,%20Matale%2021000&t=&z=15&ie=UTF8&iwloc=&output=embed"
+              width="100%"
+              height="100%"
+              style={{ border: 0 }}
+              allowFullScreen=""
+              loading="lazy"
               referrerPolicy="no-referrer-when-downgrade"
               className="absolute inset-0"
             ></iframe>
