@@ -56,7 +56,7 @@ export default function Home() {
   const parallaxY = useTransform(scrollY, [0, 1000], [0, 300]);
 
   useEffect(() => {
-    fetch('/api/content?site=design')
+    fetch('/api/content?site=design', { cache: 'no-store' })
       .then(res => res.json())
       .then(data => setContent(data));
 
